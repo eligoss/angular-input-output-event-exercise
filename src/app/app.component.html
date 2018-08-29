@@ -1,0 +1,15 @@
+<div class="container">
+
+  <div class="row justify-content-center">
+    <div class="text-center h2">Timer Game!</div>
+
+    <app-game-control (ValueChange)="OnNewTick($event)"></app-game-control>
+    <div class="row"></div>
+
+    <div class="row justify-content-around" *ngFor="let element of elements">
+      <app-odd *ngIf="element % 2 != 0" [OddElement]="element"></app-odd>
+      <app-even *ngIf="element % 2 == 0" [EvenElement]="element"></app-even>
+    </div>
+  </div>
+</div>
+
